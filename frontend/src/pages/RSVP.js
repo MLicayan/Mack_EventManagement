@@ -47,12 +47,12 @@ export const RSVP = () => {
       <h1>RSVP</h1>
       <div className='form-container'>
         <div className='form-inputs'>
-          <input type='text' name='Guest' placeholder='Guest Name' value={newGuest.GuestName} onChange={handleInputChange}/>
+          <input type='text' name='GuestName' placeholder='Guest Name' value={newGuest.GuestName} onChange={handleInputChange}/>
           <input type='text' name='Email' placeholder='Email' value={newGuest.Email} onChange={handleInputChange}/>
           <textarea name='Address' placeholder='Address' value={newGuest.Address} onChange={handleInputChange}/>
           <input type='text' name='Contact_Number' placeholder='Contact Number' value={newGuest.Contact_Number} onChange={handleInputChange}/>
           <div className='form-buttons'>
-            <button onClick={handleAddEvent}>Add New Event</button>
+            <button onClick={handleAddEvent}>Add New Guest</button>
           </div>
           <p>Michael Licayan</p>
           <p>Cagayan De Oro City</p>
@@ -84,7 +84,7 @@ export const RSVP = () => {
           </p>
         </div>
         <div className='Image'>
-        <img src='https://placehold.co/360x600?text=Image' alt='Guest Image'/>
+        <img src='https://placehold.co/360x600?text=Image' alt='Guest Photo'/>
         </div>
       </div>
     </div>

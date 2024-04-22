@@ -4,6 +4,7 @@ import { Analytics } from "./pages/Analytics";
 import { RSVP } from "./pages/RSVP";
 import EventCreation from "./pages/EventCreation";
 import { Home } from "./pages/Home";
+import ContactUs from "./pages/ContactUs";
 
 const app = () => {
   return(
@@ -15,6 +16,7 @@ const app = () => {
           <Route path="/Analytics" element={<Analytics/>}/>
           <Route path="/RSVP" element={<RSVP/>}/>
           <Route path="/EventCreation" element={<EventCreation/>}/>
+          <Route path="/ContactUs" element={<ContactUs/>}/>
         </Routes>
       </Router>
     </div>

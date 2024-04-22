@@ -11,7 +11,7 @@ export const Navbar = () => {
         <Link to="/EventCreation"> Create Event </Link>
         <Link to="/Analytics"> Analytics </Link>
         <Link to="/RSVP"> RSVP </Link>
-        <Link to="/"> Contact Us </Link>
+        <Link to="/ContactUs"> Contact Us </Link>
       </div>
     </div>
   );

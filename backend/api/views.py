@@ -13,6 +13,10 @@ class GuestListCreateView(generics.ListCreateAPIView):
     queryset = Guest.objects.all()
     serializer_class = GuestSerializer
 
+class GuestDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Guest.objects.all()
+    serializer_class = EventSerializer
+
 class EventListCreateView(generics.ListCreateAPIView):
     queryset = Events.objects.all()
     serializer_class = EventSerializer
