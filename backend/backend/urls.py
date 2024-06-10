@@ -20,9 +20,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),
-    path('api/auth', include('djoser.urls')),
+    path("admin/", admin.site.urls),
+    path("api/", include('api.urls')),
+    path("api/v1/auth/", include('djoser.urls')),
+    path("api/v1/auth/", include('djoser.urls.jwt')),
 ]
 
 if settings.DEBUG:

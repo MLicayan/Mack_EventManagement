@@ -1,47 +1,23 @@
-/* .py-5 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-.section-head h3 {
-    color: #333;
-    font-size: 24px;
-    line-height: 23px;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding-left: 25px;
-    margin: 0;
-    position: relative;
-}
-
-.section-head h3:before {
-    background-color: #32a478;
-    height: 22px;
-    width: 5px;
-    margin: auto;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-}
-
-.mb-4 {
-    margin-bottom: 1.5rem;
-}
-
-.justify-content-between {
-    justify-content: space-between;
-}
-
-.row{
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-    padding-right: calc(var(--bs-gutter-x)* .5);
-    padding-left: calc(var(--bs-gutter-x)* .5);
-    margin-top: var(--bs-gutter-y);
-}
-
-.text-center{
+.box {
+    max-width: 1500px;
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     text-align: center;
-} */
+}
+
+.pie {
+    text-align: center;
+    display: flex;
+    justify-content: center ;
+}
+
+.appcontainer {
+    max-width: 33.33%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}

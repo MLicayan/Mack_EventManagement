@@ -146,7 +146,7 @@ const EventCreation = () => {
                 <div className='actions'>
                     <button className='view' onClick={() => handleViewClick(event.id)}>View</button>
                     <button className='edit' onClick={() => handleEditClick(event)}>Edit</button>
-                    <button className='delete' onClick={() => handleDeleteEvent(event.id)}>Delete</button>
+                    <button className='delete' onClick={() => handleDeleteEvent(event.id)}>Cancel</button>
                 </div>
                 </li>
             ))

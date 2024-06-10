@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+.appcon {
+    max-width: 1500px;
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.eh1{
+    text-align: center;
+    font-size: 80px;
+    margin: 10px;
+}
+
+.eh2{
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.column {
+     float: left;
+     width: 25%;
+     padding: 10px;
+     height: 200px;
+     margin: 10px;
+     
+}
+
+.phara{
+    padding: 50px;
+    text-align: center;
+    font-weight: bold ;
+}
+
+.row{
+    justify-content: center;
+    display: flex;
+    
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import '../main.css'
+import rsv from "../assets/RSVP.png"
 
 export const RSVP = () => {
-
+  const [events, setEvents] = useState([])
   const [guest, setGuests] = useState([])
   const [newGuest, setNewGuest] = useState({
     GuestName: "",
@@ -14,7 +15,16 @@ export const RSVP = () => {
 
   useEffect(() => {
     fetchGuest()
+    fetchEvents()
   }, [])
+
+  const fetchEvents = () => {
+    axios.get('http://127.0.0.1:8000/api/events/')
+    .then(response => {
+      setEvents(response.data)
+    })
+    .catch(error => console.error(error))
+  }
 
   const fetchGuest = () => {
     axios.get('http://127.0.0.1:8000/api/guest/')
@@ -30,6 +40,7 @@ export const RSVP = () => {
 
   const handleAddEvent = () => {
     axios.post('http://127.0.0.1:8000/api/guest/', newGuest)
+
     .then(response => {
       setGuests([...guest, response.data])
       setNewGuest({
@@ -38,6 +49,21 @@ export const RSVP = () => {
         Address: "",
         Contact_Number: "",
       })
+      alert('Guest Added Successfuly');
+    })
+    .catch(error => console.error(error))
+  }
+
+  const handleDeleteEvent = (id) => {
+    axios.delete(`http://127.0.0.1:8000/api/guest/${id}/`, )
+    .then(response => {
+      fetchGuest();
+      setNewGuest({
+        GuestName: "",
+        Email: "",
+        Address: "",
+        Contact_Number: "",
+      });
     })
     .catch(error => console.error(error))
   }
@@ -51,10 +77,30 @@ export const RSVP = () => {
           <input type='text' name='Email' placeholder='Email' value={newGuest.Email} onChange={handleInputChange}/>
           <textarea name='Address' placeholder='Address' value={newGuest.Address} onChange={handleInputChange}/>
           <input type='text' name='Contact_Number' placeholder='Contact Number' value={newGuest.Contact_Number} onChange={handleInputChange}/>
+          <select className='form-control'>
+            <option value=" ">Choose Event Name</option>
+            {events.map(event => (
+              <option value="" key={event.id}>{event.EventTitle}</option>
+            ))}
+          </select>
           <div className='form-buttons'>
             <button onClick={handleAddEvent}>Add New Guest</button>
           </div>
-          <p>Michael Licayan</p>
+          <ul className='student-list'>
+            {
+            guest.map(guest => (
+                <li key={guest.id}>
+                <div>
+                    <strong>{guest.GuestName} | {guest.Email} | {guest.Contact_Number}</strong>
+                </div>
+                <div className='actions'>
+                    <button className='delete' onClick={() => handleDeleteEvent(guest.id)}>Remove</button>
+                </div>
+                </li>
+            ))
+            }
+          </ul>
+          {/* <p>Michael Licayan</p>
           <p>Cagayan De Oro City</p>
           <p>Licayan.macky@gmail.com</p>
           <p>09265580665</p>
@@ -81,10 +127,10 @@ export const RSVP = () => {
           </p>
           <p>
           Michael Licayan
-          </p>
+          </p> */}
         </div>
         <div className='Image'>
-        <img src='https://placehold.co/360x600?text=Image' alt='Guest Photo'/>
+        <img src={rsv} height={250} alt='Guest Photo'/>
         </div>
       </div>
     </div>
